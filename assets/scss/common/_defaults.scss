@@ -1,0 +1,47 @@
+@import "fonts";
+@import "typography";
+@import "ui";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 87.847222%;
+    max-width: 1280px;
+    min-width: 320px;
+    margin: 0 auto;
+
+    @include respond-to(mobile) {
+      width: 91.46666%
+    }
+}
+
+p {
+  margin: 0;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
