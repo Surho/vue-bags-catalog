@@ -3,6 +3,7 @@
         <div :class="[$style.headerWrap, 'container']">
             <Logo/>
             <Icon-cart
+                id="headerCartIcon"
                 :class="$style.cart"
                 :header-icon="true"
                 :cart-number="cartQuantity"

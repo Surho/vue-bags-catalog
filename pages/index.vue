@@ -138,5 +138,9 @@
     .goodsContainer {
         display: flex;
         justify-content: space-between;
+
+        @include respond-to(mobile) {
+            flex-direction: column;
+        }
     }
 </style>

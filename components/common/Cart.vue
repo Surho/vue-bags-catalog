@@ -56,7 +56,8 @@
                                         :data-mask="'+7 (___) ___-__-__'"
                                         :data-slots="'_'"
                                         :class="$style.input"
-                                        :default-pattern="'^[+]7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}'"
+                                        :default-pattern="'^[+]7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}'"
+                                        :title="'Введите полностью номер телефона'"
                                         :required="false"
                                     />
 
@@ -145,7 +146,6 @@
             return {
                 formSubmitted: false,
                 animateSuccess: false,
-                phoneRegex: new RegExp(/^[+]7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/)
             }
         },
         mounted() {
@@ -208,12 +208,20 @@
 
     .cartHead {
         padding: 0 24px;
+
+        @include respond-to(mobile) {
+            padding: 0 12px;
+        }
     }
 
     .cartBody {
         height: 100%;
         padding: 0 24px;
         overflow-y: scroll;
+
+        @include respond-to(mobile) {
+            padding: 0 12px;
+        }
     }
 
     .cartBodyInner {
@@ -248,6 +256,12 @@
         padding: 52px 24px;
         box-shadow: -4px 0px 16px rgba(0, 0, 0, .05);
         background-color: white;
+
+        @include respond-to(mobile) {
+            width: 100%;
+            min-width: 320px;
+            padding: 52px 12px;
+        }
     }
 
     .overlay {

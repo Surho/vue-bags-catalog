@@ -95,6 +95,10 @@
     .info {
         width: 170px;
         margin-right: 16px;
+
+        @include respond-to(mobile) {
+            margin-right: auto;
+        }
     }
 
     .iconTrash {

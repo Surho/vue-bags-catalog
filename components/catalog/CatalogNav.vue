@@ -1,6 +1,6 @@
 <template>
     <nav :class="$style.nav">
-        <ul>
+        <ul :class="$style.navList">
             <nuxt-link v-for="category in categories"
                        v-slot="{ href, navigate, isActive}"
                        :key="category.name"
@@ -33,6 +33,20 @@
         width: 146px;
         padding-right: 15px;
         flex-shrink: 0;
+
+        @include respond-to(mobile) {
+            width: 100%;
+            margin-bottom: 30px;
+            padding-right: 0;
+            overflow-x: auto;
+        }
+    }
+
+    .navList {
+
+        @include respond-to(mobile) {
+            display: flex;
+        }
     }
 
 
@@ -40,6 +54,11 @@
         margin-bottom: 16px;
         color: $grey-light;
         transition: color .2s ease;
+
+        @include respond-to(mobile) {
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
 
         &:hover {
             color: $grey;
